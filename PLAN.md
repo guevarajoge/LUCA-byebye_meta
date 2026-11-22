@@ -1,6 +1,6 @@
 # Bye Bye Meta Development Plan
 
-**Current milestone:** Review whether the movement helps explain the survey results.
+**Current milestone:** Decide which survey findings tell the Bye Bye Meta story before choosing a visual format.
 
 Bye Bye Meta is an interactive visualization for a Master's project at LUCA Brussels. It explores how Brussels cultural institutions use Facebook and Instagram to reach audiences.
 
@@ -10,7 +10,7 @@ Bye Bye Meta is an interactive visualization for a Master's project at LUCA Brus
 - [x] Bring the sketch into this folder with a simple HTML entry point and keep its p5.js version for the baseline.
 - [x] Run it in a browser and check the animation, hover tooltips, keyboard controls, and resizing.
 - [x] Verify a working Git executable. Apple Git 2.39.2 works in Terminal, and VS Code recognizes it.
-- [ ] Set up version history in this folder. Ask before committing or discarding changes.
+- [x] Set up version history in this folder. Ask before committing or discarding changes.
 
 ## 2. Build the first survey-backed view
 
@@ -21,8 +21,8 @@ Bye Bye Meta is an interactive visualization for a Master's project at LUCA Brus
 
 ## 3. Review before expanding
 
-- [ ] Discuss whether the animation helps viewers understand the distribution.
-- [ ] Choose one follow-up survey question. Candidate topics include which channels institutions use and whether they would consider leaving Meta.
+- [ ] Agree on the storyline and the survey questions that support it.
+- [ ] Compare a simple chart and a quote-led layout before deciding what role animation should play.
 - [ ] Continue with p5.js and vanilla JavaScript. Revisit Vue or React if several views need shared filters or controls.
 
 ## Changes to the plan
@@ -40,3 +40,13 @@ When we agree on a change, update the relevant checklist and the current milesto
 - **2026-11-22** — Restored the original animated sketch as the [homepage](http://localhost:8080/) and kept the aggregate visualization at [survey.html](http://localhost:8080/survey.html). Verified both pages in Chrome.
 
 - **2026-11-22** — Restored the default Git command and added ignore rules for the raw survey exports. Repository initialization and the first commit are pending.
+
+- **2026-11-22** — Saved the first prototype as commit `a8a4845`. The local `main` branch tracks `origin/main`. Both raw survey exports remain outside Git history.
+
+- **2026-11-22** — Shifted the design review to the story and the evidence. Proposed starting with channels in use, the conditions under which respondents might leave Meta, and what they say is at stake. Audience-share estimates are a possible supporting detail.
+
+- **2026-11-22** — Built a [Would you leave Meta? prototype](http://localhost:8080/leaving-meta.html) with a static four-answer chart and two permission-cleared excerpts. Verified the counts and excerpts against the survey and checked the page at desktop and mobile widths. The storyline and visual format are open for review.
+
+- **2026-11-22** — The static chart felt too generic. Proposed a p5.js study using 26 anonymous marks and a second gathering point to stage the question of leaving together. The movement will interpret the four observed answers while the counts stay fixed. Test the interaction before choosing whether to add shader or 3D work.
+
+- **2026-11-22** — Built the [Leaving Together p5.js study](http://localhost:8080/leaving-together.html). Verified the four survey counts and both quote permissions, then tested mouse, keyboard, touch, and the narrow layout in Chrome. Review whether the tethered marks communicate the conditional response before expanding the story.

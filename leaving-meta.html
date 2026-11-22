@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Would you leave Meta? | Bye Bye Meta</title>
+  <style>
+    :root {
+      color-scheme: light;
+      background: #f4efe5;
+      color: #24211e;
+      font: 16px/1.5 Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    main { width: min(100% - 2.5rem, 64rem); margin: 0 auto; padding: 2rem 0 4rem; }
+    a { color: inherit; text-underline-offset: 0.2em; }
+    header { padding: 2.75rem 0 1.5rem; }
+    h1, h2, p, figure, blockquote { margin: 0; }
+    h1, h2 { font-family: Georgia, serif; font-weight: normal; }
+    h1 { font-size: clamp(2.65rem, 8vw, 6rem); line-height: 1; letter-spacing: -0.05em; }
+    h2 { font-size: clamp(1.75rem, 4vw, 2.65rem); line-height: 1.1; }
+    .question { margin-top: 1.25rem; max-width: 39rem; font-size: clamp(1rem, 2.5vw, 1.25rem); }
+    figure { padding: clamp(1rem, 4vw, 2rem); background: #fffcf5; border: 1px solid #d9d0c2; }
+    figcaption { color: #595149; font-size: 0.875rem; }
+    .responses { display: grid; gap: 1.15rem; list-style: none; padding: 0; margin: 1rem 0; }
+    .label { display: flex; justify-content: space-between; align-items: baseline; gap: 0.75rem; }
+    .label strong { font-size: 1.25rem; font-variant-numeric: tabular-nums; }
+    meter { display: block; width: 100%; height: 0.65rem; appearance: none; border: 0; background: #e8e0d3; }
+    meter::-webkit-meter-bar { background: #e8e0d3; border: 0; border-radius: 0; }
+    meter::-webkit-meter-optimum-value { background: #53514c; }
+    meter::-moz-meter-bar { background: #53514c; }
+    .conditional { color: #8c311c; font-weight: bold; }
+    .conditional meter::-webkit-meter-optimum-value { background: #ac3d24; }
+    .conditional meter::-moz-meter-bar { background: #ac3d24; }
+    .finding { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid #d9d0c2; }
+    section { margin-top: 2.75rem; }
+    .quotes { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: 1rem; margin-top: 1rem; }
+    .quotes figure { border-top: 3px solid #ac3d24; }
+    blockquote { margin: 0.65rem 0 0; font: 1.25rem/1.5 Georgia, serif; }
+  </style>
+</head>
+<body>
+  <main>
+    <nav aria-label="Project"><a href="/">Bye Bye Meta</a></nav>
+    <header>
+      <h1>Would you leave Meta?</h1>
+      <p class="question">If a reliable local alternative existed and other Brussels institutions moved there too, would you leave Facebook and Instagram?</p>
+    </header>
+
+    <figure>
+      <figcaption>26 survey responses. One choice per response.</figcaption>
+      <ul class="responses">
+        <li class="conditional">
+          <div class="label"><span>Maybe, if enough others did</span><strong>10</strong></div>
+          <meter min="0" max="26" value="10" aria-hidden="true"></meter>
+        </li>
+        <li>
+          <div class="label"><span>Yes</span><strong>7</strong></div>
+          <meter min="0" max="26" value="7" aria-hidden="true"></meter>
+        </li>
+        <li>
+          <div class="label"><span>No</span><strong>5</strong></div>
+          <meter min="0" max="26" value="5" aria-hidden="true"></meter>
+        </li>
+        <li>
+          <div class="label"><span>We are already looking into it</span><strong>4</strong></div>
+          <meter min="0" max="26" value="4" aria-hidden="true"></meter>
+        </li>
+      </ul>
+      <p class="finding">The most common answer was conditional. Ten respondents said they might leave if enough others did.</p>
+    </figure>
+
+    <section aria-labelledby="stakes">
+      <h2 id="stakes">What could change if Meta disappeared?</h2>
+      <div class="quotes">
+        <figure>
+          <figcaption>Rebuilding an audience</figcaption>
+          <blockquote>“I think it would be a shame to lose the audience we've built up; if we no longer have those social media platforms, I wouldn't know how to build a new, loyal audience.”</blockquote>
+        </figure>
+        <figure>
+          <figcaption>Making time for other work</figcaption>
+          <blockquote>“If Facebook and Instagram disappeared tomorrow, we could create a new way to connect to each other, we would save time not trying to have visivility.”</blockquote>
+        </figure>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
