@@ -1,0 +1,31 @@
+{
+  "question": "What share of your audience finds you through Facebook or Instagram, in your view?",
+  "unit": "survey responses",
+  "totalResponses": 17,
+  "bands": [
+    {
+      "label": "Under 10%",
+      "count": 4
+    },
+    {
+      "label": "10–25%",
+      "count": 2
+    },
+    {
+      "label": "25–50%",
+      "count": 2
+    },
+    {
+      "label": "Over 50%",
+      "count": 1
+    },
+    {
+      "label": "No idea",
+      "count": 7
+    },
+    {
+      "label": "No answer",
+      "count": 1
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bye Bye Meta</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/p5@2.3.4/lib/p5.min.js" defer></script>
+    <script src="sketch.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Bye Bye Meta</h1>
+        <p id="question">Estimated audience share via Facebook or Instagram</p>
+        <div id="controls" role="group" aria-label="Animation controls" hidden>
+          <button type="button" data-mode="auto" aria-pressed="true">Auto <kbd>1</kbd></button>
+          <button type="button" data-mode="scatter" aria-pressed="false">Scatter <kbd>2</kbd></button>
+          <button type="button" data-mode="gather" aria-pressed="false">Gather <kbd>3</kbd></button>
+          <button type="button" id="pause">Pause</button>
+        </div>
+      </header>
+      <div id="field" aria-hidden="true"></div>
+      <section aria-labelledby="summary">
+        <h2 id="summary" aria-live="polite">Loading survey counts…</h2>
+        <p id="movement" hidden>Each card is one answer group. The motion brings the groups together. The counts stay the same.</p>
+        <ul id="legend"></ul>
+      </section>
+    </main>
+  </body>
+</html>
