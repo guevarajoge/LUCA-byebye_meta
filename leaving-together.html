@@ -21,7 +21,7 @@
     <div id="field" aria-hidden="true"></div>
     <div class="action">
       <button id="hold" type="button" aria-pressed="false" aria-describedby="instructions" disabled>Make space elsewhere</button>
-      <span id="instructions">Press and hold, then release.</span>
+      <span id="instructions">Press and hold to open the field and reveal another response.</span>
     </div>
     <footer>
       <div class="responses">
@@ -29,8 +29,15 @@
         <ul id="response-key"></ul>
       </div>
       <figure>
-        <figcaption>From another survey question about what could change</figcaption>
-        <blockquote id="quote">“I think it would be a shame to lose the audience we've built up; if we no longer have those social media platforms, I wouldn't know how to build a new, loyal audience.”</blockquote>
+        <figcaption>What would you lose or gain if Facebook and Instagram disappeared?</figcaption>
+        <div class="quote-controls" role="group" aria-label="Browse survey responses">
+          <button id="previous-quote" type="button">Previous</button>
+          <button id="next-quote" type="button">Next</button>
+        </div>
+        <div aria-live="polite" aria-atomic="true">
+          <p id="quote-position" class="quote-position"></p>
+          <blockquote id="quote"></blockquote>
+        </div>
       </figure>
     </footer>
     <noscript>This visualization requires JavaScript. <a href="/leaving-meta.html">Read the survey results.</a></noscript>

@@ -26,3 +26,6 @@ li span { color: var(--mark-color); min-width: 3ch; font-variant-numeric: tabula
 figure { margin: 0; }
 blockquote { margin: 0.45rem 0 0; font-size: clamp(1.1rem, 2vw, 1.25rem); line-height: 1.4; }
 @media (max-width: 660px) { footer { grid-template-columns: 1fr; } }
+
+.quote-position { margin-top: 0.55rem; color: #d0cad0; font-size: 0.875rem; font-variant-numeric: tabular-nums; }
+.quote-controls { display: flex; gap: 0.5rem; margin-top: 0.85rem; }

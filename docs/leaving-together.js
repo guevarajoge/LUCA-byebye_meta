@@ -9,8 +9,34 @@ const field = document.querySelector('#field');
 const hold = document.querySelector('#hold');
 const legend = document.querySelector('#response-key');
 const quote = document.querySelector('#quote');
-const firstQuote = quote.textContent;
-const secondQuote = '“Maybe we could spend more time figuring how to get to our artistic and cultural point.”';
+const quotes = [
+  "I think it would be a shame to lose the audience we've built up; if we no longer have those social media platforms, I wouldn't know how to build a new, loyal audience.",
+  "If Facebook and Instagram disappeared tomorrow, we could create a new way to connect to each other, we would save time not trying to have visivility. Maybe we could spend more time figuring how to get to our artistic and cultural point. And we could certainly be more ethical.",
+  "As communicators, we need to be where people are. People are on META. As long as they are there, so will we. We are open to being on other more responsible social media as well. But leaving META now when a lot of people use it seems not smart.",
+  "As an organisation operating in Belgium, the Netherlands, Luxembourg and Finland, it would be difficult for us to only use a platform that was local, considering the platforms the artists and partners we collaborate with use as well as our audiences. Perhaps, rather than an alternative it would be an addition.",
+  "It bothers me that partners or similar institutions still rely on Meta, even more so: boosted their activity on its channels.",
+  "Lose: a lot of audience we built during the last years. 'Gain' (between brackets because I am convinced that time will have to be used for other (digital) platforms): more time to also put in direct communication to our peer audience (flyering, afficheren...)",
+  "We are staying on Instagram because we want to remain a voice for inclusion and connection, reaching people in our community who may not find us through other channels. We also want to bring our Facebook and Instagram followers along as we explore new spaces, online and offline, so everyone feels welcome to join us.",
+  "Si plus Fb ou Ig : perte audience, perte partenaires et contact.",
+  "Lose: Reaching new audiences, speaking to younger audiences, a direct link to our international community of artists/partners/pros, general image of the organisation, a visibility for artists internationally (+for partners), a visibility for our photos and videos / Gain: more staff time for other communication actions that could be redirected to local communities, closer alignment with our values",
+  "We would lose one of our most crucial communication channels where we stay informed about what's happening at the museums: openings or extension of exhibition, closure of opening of museums ([named museums]), museums' news & updates are also regularly updated and published in clear and concise ways. Besides losing touch with our network, this would also endanger our connection with our audience (locals in Brussels, people visiting Brussels from Flanders/Wallonia/foreign countries), and lastly, our communication to all our direct audiences (museums, partner institutions, and museum visitors, and everyone else) and our own visibility. But we would also gain independence from a corporation with which we strongly disagree with regarding our core values (local, durable, ethical). We are looking forward to re-imagining new communication channels where we can reach our audiences in a more impactful way that is ethical and more meaningful.",
+  "J'aime encore travailler sur des supports web, pour du montage par ex. Ne plus faire de réseaux me permettrait de travailler d'avantage sur notre site internet, soigner les pages spectacle par ex.Ce serait aussi le retour a plus de print.",
+  "We would gain more integrity and maybe lost some visibility for our events like launching books, but not so much for our daily frequentation (printing slots)",
+  "I previously took part to the GT Bye Bye Meta when I was working at [an institution]. At [that institution] we were considering leaving all the Platforms. We stopped using TikTok for exemple. In the end the only reason why we stayed on Instagram/Facebook is the artist's visibility. Many of them do not have a website and have an Instagram acount. If institutions such as [two named institutions] close their Instagram acounts with more than 20k followers, that would mean way less visibility for artists. But we are super open to work on other Platforms as we perfectly know Meta is problematic."
+];
+const quotePosition = document.querySelector('#quote-position');
+let quoteIndex = 0;
+let advancedDuringHold = false;
+
+function showQuote(index) {
+  quoteIndex = (index + quotes.length) % quotes.length;
+  quote.textContent = `“${quotes[quoteIndex]}”`;
+  quotePosition.textContent = `${quoteIndex + 1} / ${quotes.length}`;
+}
+
+document.querySelector('#previous-quote').addEventListener('click', () => showQuote(quoteIndex - 1));
+document.querySelector('#next-quote').addEventListener('click', () => showQuote(quoteIndex + 1));
+showQuote(0);
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 
 const symbols = { circle: '●', diamond: '◆', ring: '○', square: '■' };
@@ -34,7 +60,9 @@ let toggled = false;
 let active = false;
 
 function updateHold() {
-  active = pointer !== null || keyboard || toggled;
+  const held = pointer !== null || keyboard || toggled;
+  if (held && !active) advancedDuringHold = false;
+  active = held;
   hold.setAttribute('aria-pressed', active);
 }
 
@@ -113,8 +141,10 @@ if (typeof p5 === 'function') {
       if (!reducedMotion.matches) clock += dt;
       const target = active ? 1 : 0;
       openness = reducedMotion.matches ? target : p.lerp(openness, target, 1 - Math.exp(-4.6 * dt));
-      const shownQuote = openness > 0.72 ? secondQuote : firstQuote;
-      if (quote.textContent !== shownQuote) quote.textContent = shownQuote;
+      if (active && openness > 0.72 && !advancedDuringHold) {
+        advancedDuringHold = true;
+        showQuote(quoteIndex + 1);
+      }
 
       p.background('#111218');
       const unit = Math.min(p.width * 0.14, p.height * 0.33, 115);
