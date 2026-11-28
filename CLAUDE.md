@@ -19,6 +19,9 @@ At the start of a session, read [handover.md](handover.md) for where work left o
 ## How we work
 
 - Work in small steps and explain important decisions in plain language.
+- Do small, clear tasks directly. If a request is big or unclear, suggest running `/brief` first rather than guessing.
+- After a multi-step workflow or a tricky fix, offer to save it as a skill in `.claude/skills/`.
+- Suggest `/clear` when the user switches to an unrelated task. handover.md and PLAN.md carry the context forward.
 - Check each change in the browser: the counts, quote navigation, keyboard and pointer input, and a narrow viewport.
 - After verifying a change, add a dated entry to PLAN.md.
 - Keep PNGs, PDFs and other heavy files (images, video, audio, design files, archives) out of commits. `.gitignore` covers the common types. If the public site needs an asset, ask first.
