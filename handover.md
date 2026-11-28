@@ -23,6 +23,30 @@ Each completed hold advances one quote, which stays visible on release. Previous
 
 Channel routes shipped in `v0.4.0`. Three buttons below the canvas show newsletters (23), cultural listings (22), and print (20) of 26 responses as one labeled line at a time, leaving the Meta field. Respondents could select multiple channels. The routes stay aggregate and separate from the individual marks. Next, review with viewers whether revealing the routes makes the hold gesture easier to interpret before expanding the scene. The finding that all ten conditional respondents reported using newsletters remains private and a candidate for discussion before public use.
 
+## Parked to-dos (28 Nov)
+
+1. **Positioning statement:** why this piece takes its own approach next to the group's four posters, and where the design decisions come from. Write it in two forms: a short chat message for the group, and a longer formal text for the 2 December presentation to the class, the organisations and the teachers.
+2. **Open-source angle and README:** add an open-source argument to the concept, plus a practical README that explains how to get the code and build your own version with different data.
+
+Decisions from the 28 Nov review of v0.4 against the group's angle (agreed, not yet built):
+- Label Instagram (25) and Facebook (23) on the Meta field.
+- Show non-response: the database lists 92 organisations, 85 were contacted, and 26 responses came back. The raw export shows 25 distinct institution names (exact match), so one organisation answered twice and about 60 of the 85 didn't respond. Spelling variants are not yet checked. Agree on the wording before building.
+- Anonymise the quote that names four countries, using brackets like the existing redactions.
+- From the group's posters, without changing the concept:
+  - Use their central message as the framing line: "The challenge is not simply whether cultural organisations want to leave Meta, but what makes leaving possible."
+  - Label the Local alternative field with Mastodon 6 · Bluesky 1, to show that the alternative is still nearly empty.
+  - Optional: tag each quote as a loss or a gain, using the doc's themes.
+  - Leave to the posters: visibility pressure, spending bands, and the other channels.
+- Cross-tabs: single numbers by default. One candidate is still to decide: all 10 "maybe" respondents use newsletters, which could highlight the newsletter route.
+- Partial conclusions (draft, single numbers only), for the piece after the hold, the positioning text and the slide:
+  1. Leaving is conditional, not refused: 21 of 26 responses are open to leaving, 5 said no.
+  2. The alternatives already exist: newsletters 23, listings 22, print 20.
+  3. Staying isn't about paid reach: 15 of 26 never pay for ads (from the group's doc; verify against the raw data).
+  4. Silence is also data: about 60 of 85 contacted organisations didn't reply.
+- Make a presentation slide for 2 December at 14:00, for the combined class slideshow.
+
+Private group material (the chat export and the context brief) belongs only in an ignored `context/` folder. Never quote it in tracked files.
+
 ## Working agreements
 
 The standing rules on survey data, publishing, testing and Git are in [CLAUDE.md](CLAUDE.md), which loads automatically each session.
