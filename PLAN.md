@@ -50,3 +50,17 @@ When we agree on a change, update the relevant checklist and the current milesto
 - **2026-11-22** — The static chart felt too generic. Proposed a p5.js study using 26 anonymous marks and a second gathering point to stage the question of leaving together. The movement will interpret the four observed answers while the counts stay fixed. Test the interaction before choosing whether to add shader or 3D work.
 
 - **2026-11-22** — Built the [Leaving Together p5.js study](http://localhost:8080/leaving-together.html). Verified the four survey counts and both quote permissions, then tested mouse, keyboard, touch, and the narrow layout in Chrome. Review whether the tethered marks communicate the conditional response before expanding the story.
+
+- **2026-11-22** — Proposed three beats for the p5.js story: channels already in use, leaving together, and what respondents might lose or gain. Prototype the channel layer next using aggregate counts. The survey shows that all ten respondents who might leave if others did already use a newsletter, a finding to review before deciding whether to show a cross-tab publicly.
+
+- **2026-11-22** — Paused narrative development before building the channel routes. The immediate priority is a shareable online preview of the current p5.js study. Resume with newsletters, cultural listings, and print as aggregate routes once hosting is settled.
+
+- **2026-11-22** — Published [Leaving Together on GitHub Pages](https://guevarajoge.github.io/LUCA-byebye_meta/) from `main` → `/docs` in commit `0fdd8a0`. Verified the public page and its assets, and tested mouse, keyboard, touch, and the narrow layout in Chrome.
+
+- **2026-11-22** — Applied the approved Space Grotesk and IBM Plex Serif pairing to Leaving Together locally and in the GitHub Pages source. Verified both web fonts and the existing gesture in Chrome. The typography update awaits a commit and push.
+
+- **2026-11-22** — Published the approved typography in commit `97b5b38` and verified that GitHub Pages serves the updated HTML and CSS.
+
+- **2026-11-22** — Added all 13 nonblank answers with permission to quote. Each completed hold advances one answer and keeps it visible on release. Added numbered Previous and Next controls and bracketed institution names in two answers. Verified the full cycle and gesture in Chrome. The GitHub Pages source is prepared locally.
+
+- **2026-11-22** — Published the 13-response update in commit `e57d623`. Verified the deployed files and tested all 13 responses, Previous and Next, and the hold gesture on the live page in Chrome.

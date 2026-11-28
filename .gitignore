@@ -1,3 +1,22 @@
 # Raw survey exports contain individual responses.
 /BYE BYE META SURVEY FOR CULTURAL WORKERS (2).json
 /BYE-BYE-META-SURVEY-FOR-CULTURAL-WORKERS (2).csv
+
+# Heavy files (previews, exports, media) stay local.
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.tif
+*.tiff
+*.psd
+*.ai
+*.fig
+*.pdf
+*.mp4
+*.mov
+*.webm
+*.wav
+*.mp3
+*.zip
