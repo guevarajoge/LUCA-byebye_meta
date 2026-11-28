@@ -153,8 +153,17 @@ if (typeof p5 === 'function') {
     let clock = 0;
     let shownChannel = null;
     let routeVisibility = 0;
+    // Canvas text can only be sized in px, so read 1rem from the page.
+    // It follows the visitor's browser text size (16px by default).
+    let rem = 16;
+    const readRem = () => {
+      const root = getComputedStyle(document.documentElement);
+      // --text-scale in the CSS enlarges all text, including these labels.
+      rem = (parseFloat(root.fontSize) || 16) * (parseFloat(root.getPropertyValue('--text-scale')) || 1);
+    };
 
     p.setup = () => {
+      readRem();
       p.createCanvas(field.clientWidth, field.clientHeight).parent(field);
       p.pixelDensity(Math.min(window.devicePixelRatio, 2));
       p.textFont('monospace');
@@ -235,11 +244,11 @@ if (typeof p5 === 'function') {
       p.circle(x, y, 4);
       p.textAlign(p.CENTER, p.CENTER);
       const small = p.width < 540;
-      p.textSize(small ? 10 : 12);
-      p.text(label, x, p.height - (small ? 34 : 38));
+      p.textSize((small ? 0.75 : 0.875) * rem);
+      p.text(label, x, p.height - (small ? 2.125 : 2.375) * rem);
       // Responses that use each platform, out of 26.
-      p.textSize(small ? 9 : 11);
-      p.text(platforms, x, p.height - 18);
+      p.textSize((small ? 0.6875 : 0.8125) * rem);
+      p.text(platforms, x, p.height - 1.125 * rem);
     }
 
     function drawRoute(originX, originY, channel, visibility) {
@@ -267,12 +276,12 @@ if (typeof p5 === 'function') {
       // Put the label on the side of the line facing away from the field, so the curve never crosses it.
       const above = endY <= originY;
       p.textAlign(p.LEFT, above ? p.BOTTOM : p.TOP);
-      p.textSize(p.width < 540 ? 10 : 12);
+      p.textSize((p.width < 540 ? 0.75 : 0.875) * rem);
       const labelY = above ? endY - 8 : endY + 8;
       p.text(`${channel.label.toUpperCase()} · ${channel.count} OF ${RESPONSES}`, 12, labelY);
       if (channel.note) {
-        p.textSize(p.width < 540 ? 9 : 11);
-        p.text('INCL. ALL 10 “MAYBE” RESPONSES', 12, above ? labelY - 16 : labelY + 16);
+        p.textSize((p.width < 540 ? 0.6875 : 0.8125) * rem);
+        p.text('INCL. ALL 10 “MAYBE” RESPONSES', 12, above ? labelY - rem : labelY + rem);
       }
     }
 
@@ -305,6 +314,7 @@ if (typeof p5 === 'function') {
     }
 
     new ResizeObserver(() => {
+      readRem();
       if (marks.length) p.resizeCanvas(field.clientWidth, field.clientHeight);
     }).observe(field);
   });
