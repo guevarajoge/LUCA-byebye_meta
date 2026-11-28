@@ -11,7 +11,7 @@ Bye Bye Meta is a LUCA Brussels Master's project about how Brussels cultural ins
 - Work in `~/Development/LUCA-dev/bye-bye-meta` on `main`. The sibling `bye-bye-meta-v020` is an older preview pinned to `v0.2.0`.
 - Run `node serve.js` from the project root and open [Leaving Together](http://localhost:8080/leaving-together.html). The root `index.html` is the original fictional-label prototype. `survey.html` is the aggregate audience-share experiment, and `leaving-meta.html` is the static chart.
 - The [public site](https://guevarajoge.github.io/LUCA-byebye_meta/) is hosted by GitHub Pages from `main` → `/docs`. Its homepage is `docs/index.html`. The local Leaving Together page and the public copy have separate HTML entry points and matching `leaving-together.js` and CSS files. When changing Leaving Together, keep both copies in sync and use relative URLs in `docs` so links work under the repository's Pages path.
-- The current published version is `v0.3.0` (`084df96`). Version tags run from `v0.1.0` through `v0.3.0`. The branch `backup/pre-version-renaming` preserves the old history locally.
+- The latest version is `v0.4.1`. Frozen copies of the visibly different versions live at `docs/v0.2.1/`, `v0.2.2/`, `v0.3.0/` and `v0.4.0/`, linked from a Versions line on the latest page. Each was extracted unchanged from its Git tag. The branch `backup/pre-version-renaming` preserves the old history locally.
 
 ## What works today
 
@@ -21,7 +21,7 @@ Each completed hold advances one quote, which stays visible on release. Previous
 
 ## Where to pick up
 
-Channel routes are in place locally and in `docs/` (pending commit as `v0.4.0`). Three buttons below the canvas show newsletters (23), cultural listings (22), and print (20) of 26 responses as one labeled line at a time, leaving the Meta field. Respondents could select multiple channels. The routes stay aggregate and separate from the individual marks. Next, review with viewers whether revealing the routes makes the hold gesture easier to interpret before expanding the scene. The finding that all ten conditional respondents reported using newsletters remains private and a candidate for discussion before public use.
+Channel routes shipped in `v0.4.0`. Three buttons below the canvas show newsletters (23), cultural listings (22), and print (20) of 26 responses as one labeled line at a time, leaving the Meta field. Respondents could select multiple channels. The routes stay aggregate and separate from the individual marks. Next, review with viewers whether revealing the routes makes the hold gesture easier to interpret before expanding the scene. The finding that all ten conditional respondents reported using newsletters remains private and a candidate for discussion before public use.
 
 ## Working agreements
 
