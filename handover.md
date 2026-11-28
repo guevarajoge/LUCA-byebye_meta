@@ -28,7 +28,7 @@ Channel routes shipped in `v0.4.0`. Three buttons below the canvas show newslett
 1. **Positioning statement:** why this piece takes its own approach next to the group's four posters, and where the design decisions come from. Write it in two forms: a short chat message for the group, and a longer formal text for the 2 December presentation to the class, the organisations and the teachers.
 2. **Open-source angle and README:** add an open-source argument to the concept, plus a practical README that explains how to get the code and build your own version with different data.
 
-**Built in v0.5.0:** the platform labels on both fields, the framing line, the non-response line, the bracketed countries quote, Loss/Gain tags on the quotes, the newsletter cross-tab on the Newsletters route, and the four conclusions after the first hold. Conclusion 3 uses **11 of 17** (consent rule for ad answers), not 15 of 26. Tell the group so the posters match.
+**Built in v0.5.0:** the platform labels on both fields, the framing line, the non-response line, the bracketed countries quote, Loss/Gain tags on the quotes, the newsletter cross-tab on the Newsletters route, and the four conclusions after the first hold. Conclusion 3 uses **15 of 26**, matching the group's posters (user's decision, v0.5.1). Only 17 respondents allowed ad answers in totals, so this number includes 9 who did not; see PLAN.md.
 
 Decisions from the 28 Nov review of v0.4 against the group's angle (record; all built in v0.5.0 except the slide and the parked to-dos):
 - Label Instagram (25) and Facebook (23) on the Meta field.
