@@ -3,13 +3,72 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bye Bye Meta</title>
-  <!-- v0.5.0 is still the latest version of the piece, so this address forwards there.
-       Replace this file with the frozen copy once a newer minor version is released. -->
-  <meta http-equiv="refresh" content="0; url=../">
-  <link rel="canonical" href="../">
+  <title>Leaving together | Bye Bye Meta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&amp;family=Space+Grotesk:wght@400;700&amp;display=swap">
+  <link rel="stylesheet" href="leaving-together.css">
+  <script src="https://cdn.jsdelivr.net/npm/p5@2.3.4/lib/p5.min.js" defer></script>
+  <script src="leaving-together.js" defer></script>
 </head>
-<body style="background: #111218; color: #f3eddf; font-family: Arial, sans-serif;">
-  <p>v0.5.0 is the latest version. <a href="../" style="color: #aee5d4;">Go to the latest version</a>.</p>
+<body>
+  <!-- Archive banner: the only addition to this frozen copy of v0.5.0. -->
+  <style>.versions { display: none; } /* This copy's own versions line would contradict the banner and its links break here. */</style>
+  <aside class="archive-banner" style="position: sticky; top: 0; z-index: 10; display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; justify-content: space-between; padding: 0.6rem max(4.5%, 1rem); background: #aee5d4; color: #111218; font: 0.875rem/1.4 'Space Grotesk', Arial, sans-serif;">
+    <span>You are viewing <strong>v0.5.0</strong>, an earlier version of this piece.</span>
+    <a href="../" style="color: #111218; font-weight: 700; text-underline-offset: 0.25em;">Go to the latest version →</a>
+  </aside>
+  <main>
+    <header>
+      <a href="./">Bye Bye Meta</a>
+      <h1>Would you<br>leave Meta?</h1>
+      <p>If a reliable local alternative existed and other Brussels institutions moved there too, would you leave Facebook and Instagram?</p>
+      <p class="framing">The challenge is not simply whether cultural organisations want to leave Meta, but what makes leaving possible.</p>
+    </header>
+    <div id="field" aria-hidden="true"></div>
+    <p class="visually-hidden">Of the 26 responses, 25 use Instagram and 23 use Facebook. For a local alternative, 6 use Mastodon and 1 uses Bluesky.</p>
+    <div class="channels">
+      <div class="channel-controls" role="group" aria-labelledby="channel-heading">
+        <span id="channel-heading">Channels already in use</span>
+        <span id="channel-buttons"></span>
+      </div>
+      <p id="channel-status" aria-live="polite"></p>
+    </div>
+    <div class="action">
+      <button id="hold" type="button" aria-pressed="false" aria-describedby="instructions" disabled>Make space elsewhere</button>
+      <span id="instructions">Press and hold to open the field and reveal another response.</span>
+    </div>
+    <section id="conclusions" aria-labelledby="conclusions-heading" hidden>
+      <h2 id="conclusions-heading">What the survey shows</h2>
+      <ol>
+        <li><strong>Leaving is conditional, not refused.</strong> 21 of 26 responses are open to leaving. 5 said no.</li>
+        <li><strong>The alternatives already exist.</strong> Newsletters 23, cultural listings 22 and print 20 of 26.</li>
+        <li><strong>Staying isn’t about paid reach.</strong> 11 of the 17 respondents who allowed their ad answers to be counted never pay for ads.</li>
+        <li><strong>Silence is also data.</strong> About 60 of the 85 organisations contacted did not reply.</li>
+      </ol>
+    </section>
+    <footer>
+      <div class="responses">
+        <p>One mark per survey response</p>
+        <ul id="response-key"></ul>
+        <p class="silence">85 organisations were asked. 26 responses came back. About 60 stayed silent, and silence is data too.</p>
+      </div>
+      <figure>
+        <figcaption>What would you lose or gain if Facebook and Instagram disappeared?</figcaption>
+        <div class="quote-controls" role="group" aria-label="Browse survey responses">
+          <button id="previous-quote" type="button">Previous</button>
+          <button id="next-quote" type="button">Next</button>
+        </div>
+        <div aria-live="polite" aria-atomic="true">
+          <p id="quote-position" class="quote-position"></p>
+          <blockquote id="quote"></blockquote>
+        </div>
+      </figure>
+    </footer>
+    <nav class="versions" aria-label="Earlier versions">
+      You are viewing the latest version. Earlier versions: <a href="v0.4.0/">v0.4.0</a> <a href="v0.3.0/">v0.3.0</a> <a href="v0.2.2/">v0.2.2</a> <a href="v0.2.1/">v0.2.1</a>
+    </nav>
+    <noscript>This visualization requires JavaScript. <a href="./leaving-meta.html">Read the survey results.</a></noscript>
+  </main>
 </body>
 </html>

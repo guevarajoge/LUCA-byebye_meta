@@ -11,7 +11,7 @@ Bye Bye Meta is a LUCA Brussels Master's project about how Brussels cultural ins
 - Work in `~/Development/LUCA-dev/bye-bye-meta` on `main`. The sibling `bye-bye-meta-v020` is an older preview pinned to `v0.2.0`.
 - Run `node serve.js` from the project root and open [Leaving Together](http://localhost:8080/leaving-together.html). The root `index.html` is the original fictional-label prototype. `survey.html` is the aggregate audience-share experiment, and `leaving-meta.html` is the static chart.
 - The [public site](https://guevarajoge.github.io/LUCA-byebye_meta/) is hosted by GitHub Pages from `main` → `/docs`. Its homepage is `docs/index.html`. The local Leaving Together page and the public copy have separate HTML entry points and matching `leaving-together.js` and CSS files. When changing Leaving Together, keep both copies in sync and use relative URLs in `docs` so links work under the repository's Pages path.
-- The latest version is `v0.5.0`. Frozen copies of the replaced versions live at `docs/v0.2.1/`, `v0.2.2/`, `v0.3.0/` and `v0.4.0/`. Each has an archive banner linking back to the latest page, which lists them under Earlier versions. `docs/v0.5.0/` only forwards to the latest page until a newer minor version replaces it. The routine is in CLAUDE.md. The branch `backup/pre-version-renaming` preserves the old history locally.
+- The latest version is `v0.6.0`. Frozen copies of the replaced versions live at `docs/v0.2.1/`, `v0.2.2/`, `v0.3.0/`, `v0.4.0/` and `v0.5.0/`. Each has an archive banner linking back to the latest page, which lists them under Earlier versions. `docs/v0.6.0/` only forwards to the latest page until a newer minor version replaces it. Since v0.6.0 the footer has a short "Why open source" statement linking to the README. The routine is in CLAUDE.md. The branch `backup/pre-version-renaming` preserves the old history locally.
 
 ## What works today
 
@@ -26,7 +26,7 @@ Channel routes shipped in `v0.4.0`. Three buttons below the canvas show newslett
 ## Parked to-dos (28 Nov)
 
 1. **Positioning statement:** why this piece takes its own approach next to the group's four posters, and where the design decisions come from. Write it in two forms: a short chat message for the group, and a longer formal text for the 2 December presentation to the class, the organisations and the teachers.
-2. **Open-source angle and README:** add an open-source argument to the concept, plus a practical README that explains how to get the code and build your own version with different data.
+2. ~~**Open-source angle and README**~~ Done 28 Nov: see [README.md](README.md) and the MIT [LICENSE](LICENSE), which covers the code only, not the survey content. Reuse its "Why open source" points in the positioning statement.
 
 **Built in v0.5.0:** the platform labels on both fields, the framing line, the non-response line, the bracketed countries quote, Loss/Gain tags on the quotes, the newsletter cross-tab on the Newsletters route, and the four conclusions after the first hold. Conclusion 3 uses **15 of 26**, matching the group's posters (user's decision, v0.5.1). Only 17 respondents allowed ad answers in totals, so this number includes 9 who did not; see PLAN.md.
 
