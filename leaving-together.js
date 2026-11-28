@@ -9,29 +9,31 @@ const field = document.querySelector('#field');
 const hold = document.querySelector('#hold');
 const legend = document.querySelector('#response-key');
 const quote = document.querySelector('#quote');
+// Each answer is tagged by what it names: a loss, a gain, or both.
 const quotes = [
-  "I think it would be a shame to lose the audience we've built up; if we no longer have those social media platforms, I wouldn't know how to build a new, loyal audience.",
-  "If Facebook and Instagram disappeared tomorrow, we could create a new way to connect to each other, we would save time not trying to have visivility. Maybe we could spend more time figuring how to get to our artistic and cultural point. And we could certainly be more ethical.",
-  "As communicators, we need to be where people are. People are on META. As long as they are there, so will we. We are open to being on other more responsible social media as well. But leaving META now when a lot of people use it seems not smart.",
-  "As an organisation operating in Belgium, the Netherlands, Luxembourg and Finland, it would be difficult for us to only use a platform that was local, considering the platforms the artists and partners we collaborate with use as well as our audiences. Perhaps, rather than an alternative it would be an addition.",
-  "It bothers me that partners or similar institutions still rely on Meta, even more so: boosted their activity on its channels.",
-  "Lose: a lot of audience we built during the last years. 'Gain' (between brackets because I am convinced that time will have to be used for other (digital) platforms): more time to also put in direct communication to our peer audience (flyering, afficheren...)",
-  "We are staying on Instagram because we want to remain a voice for inclusion and connection, reaching people in our community who may not find us through other channels. We also want to bring our Facebook and Instagram followers along as we explore new spaces, online and offline, so everyone feels welcome to join us.",
-  "Si plus Fb ou Ig : perte audience, perte partenaires et contact.",
-  "Lose: Reaching new audiences, speaking to younger audiences, a direct link to our international community of artists/partners/pros, general image of the organisation, a visibility for artists internationally (+for partners), a visibility for our photos and videos / Gain: more staff time for other communication actions that could be redirected to local communities, closer alignment with our values",
-  "We would lose one of our most crucial communication channels where we stay informed about what's happening at the museums: openings or extension of exhibition, closure of opening of museums ([named museums]), museums' news & updates are also regularly updated and published in clear and concise ways. Besides losing touch with our network, this would also endanger our connection with our audience (locals in Brussels, people visiting Brussels from Flanders/Wallonia/foreign countries), and lastly, our communication to all our direct audiences (museums, partner institutions, and museum visitors, and everyone else) and our own visibility. But we would also gain independence from a corporation with which we strongly disagree with regarding our core values (local, durable, ethical). We are looking forward to re-imagining new communication channels where we can reach our audiences in a more impactful way that is ethical and more meaningful.",
-  "J'aime encore travailler sur des supports web, pour du montage par ex. Ne plus faire de réseaux me permettrait de travailler d'avantage sur notre site internet, soigner les pages spectacle par ex.Ce serait aussi le retour a plus de print.",
-  "We would gain more integrity and maybe lost some visibility for our events like launching books, but not so much for our daily frequentation (printing slots)",
-  "I previously took part to the GT Bye Bye Meta when I was working at [an institution]. At [that institution] we were considering leaving all the Platforms. We stopped using TikTok for exemple. In the end the only reason why we stayed on Instagram/Facebook is the artist's visibility. Many of them do not have a website and have an Instagram acount. If institutions such as [two named institutions] close their Instagram acounts with more than 20k followers, that would mean way less visibility for artists. But we are super open to work on other Platforms as we perfectly know Meta is problematic."
+  { tag: 'Loss', text: "I think it would be a shame to lose the audience we've built up; if we no longer have those social media platforms, I wouldn't know how to build a new, loyal audience." },
+  { tag: 'Gain', text: "If Facebook and Instagram disappeared tomorrow, we could create a new way to connect to each other, we would save time not trying to have visivility. Maybe we could spend more time figuring how to get to our artistic and cultural point. And we could certainly be more ethical." },
+  { tag: 'Loss', text: "As communicators, we need to be where people are. People are on META. As long as they are there, so will we. We are open to being on other more responsible social media as well. But leaving META now when a lot of people use it seems not smart." },
+  { tag: 'Loss', text: "As an organisation operating in [four countries], it would be difficult for us to only use a platform that was local, considering the platforms the artists and partners we collaborate with use as well as our audiences. Perhaps, rather than an alternative it would be an addition." },
+  { tag: 'Loss', text: "It bothers me that partners or similar institutions still rely on Meta, even more so: boosted their activity on its channels." },
+  { tag: 'Loss and gain', text: "Lose: a lot of audience we built during the last years. 'Gain' (between brackets because I am convinced that time will have to be used for other (digital) platforms): more time to also put in direct communication to our peer audience (flyering, afficheren...)" },
+  { tag: 'Loss', text: "We are staying on Instagram because we want to remain a voice for inclusion and connection, reaching people in our community who may not find us through other channels. We also want to bring our Facebook and Instagram followers along as we explore new spaces, online and offline, so everyone feels welcome to join us." },
+  { tag: 'Loss', text: "Si plus Fb ou Ig : perte audience, perte partenaires et contact." },
+  { tag: 'Loss and gain', text: "Lose: Reaching new audiences, speaking to younger audiences, a direct link to our international community of artists/partners/pros, general image of the organisation, a visibility for artists internationally (+for partners), a visibility for our photos and videos / Gain: more staff time for other communication actions that could be redirected to local communities, closer alignment with our values" },
+  { tag: 'Loss and gain', text: "We would lose one of our most crucial communication channels where we stay informed about what's happening at the museums: openings or extension of exhibition, closure of opening of museums ([named museums]), museums' news & updates are also regularly updated and published in clear and concise ways. Besides losing touch with our network, this would also endanger our connection with our audience (locals in Brussels, people visiting Brussels from Flanders/Wallonia/foreign countries), and lastly, our communication to all our direct audiences (museums, partner institutions, and museum visitors, and everyone else) and our own visibility. But we would also gain independence from a corporation with which we strongly disagree with regarding our core values (local, durable, ethical). We are looking forward to re-imagining new communication channels where we can reach our audiences in a more impactful way that is ethical and more meaningful." },
+  { tag: 'Gain', text: "J'aime encore travailler sur des supports web, pour du montage par ex. Ne plus faire de réseaux me permettrait de travailler d'avantage sur notre site internet, soigner les pages spectacle par ex.Ce serait aussi le retour a plus de print." },
+  { tag: 'Loss and gain', text: "We would gain more integrity and maybe lost some visibility for our events like launching books, but not so much for our daily frequentation (printing slots)" },
+  { tag: 'Loss', text: "I previously took part to the GT Bye Bye Meta when I was working at [an institution]. At [that institution] we were considering leaving all the Platforms. We stopped using TikTok for exemple. In the end the only reason why we stayed on Instagram/Facebook is the artist's visibility. Many of them do not have a website and have an Instagram acount. If institutions such as [two named institutions] close their Instagram acounts with more than 20k followers, that would mean way less visibility for artists. But we are super open to work on other Platforms as we perfectly know Meta is problematic." }
 ];
 const quotePosition = document.querySelector('#quote-position');
+const conclusions = document.querySelector('#conclusions');
 let quoteIndex = 0;
 let advancedDuringHold = false;
 
 function showQuote(index) {
   quoteIndex = (index + quotes.length) % quotes.length;
-  quote.textContent = `“${quotes[quoteIndex]}”`;
-  quotePosition.textContent = `${quoteIndex + 1} / ${quotes.length}`;
+  quote.textContent = `“${quotes[quoteIndex].text}”`;
+  quotePosition.textContent = `${quoteIndex + 1} / ${quotes.length} · ${quotes[quoteIndex].tag}`;
 }
 
 document.querySelector('#previous-quote').addEventListener('click', () => showQuote(quoteIndex - 1));
@@ -58,7 +60,8 @@ for (const group of groups) {
 // channels, so the counts overlap. They are not linked to individual marks.
 const RESPONSES = 26;
 const channels = [
-  { label: 'Newsletters', count: 23, end: [0, 0.13] },
+  // Approved cross-tab: all 10 'maybe, if enough others did' responses use newsletters.
+  { label: 'Newsletters', count: 23, end: [0, 0.13], note: 'including all 10 that would leave if enough others did' },
   { label: 'Cultural listings', count: 22, end: [0, 0.44] },
   { label: 'Print', count: 20, end: [0, 0.76] }
 ];
@@ -73,7 +76,7 @@ function selectChannel(channel) {
     button.setAttribute('aria-pressed', button.dataset.label === selectedChannel?.label);
   }
   channelStatus.textContent = selectedChannel
-    ? `${selectedChannel.label}: ${selectedChannel.count} of ${RESPONSES} responses already use this channel.`
+    ? `${selectedChannel.label}: ${selectedChannel.count} of ${RESPONSES} responses already use this channel${selectedChannel.note ? `, ${selectedChannel.note}` : ''}.`
     : channelHint;
 }
 
@@ -180,6 +183,7 @@ if (typeof p5 === 'function') {
       if (active && openness > 0.72 && !advancedDuringHold) {
         advancedDuringHold = true;
         showQuote(quoteIndex + 1);
+        conclusions.hidden = false;
       }
 
       p.background('#111218');
@@ -188,8 +192,8 @@ if (typeof p5 === 'function') {
       const nextX = p.width * 0.78;
       const centerY = p.height * 0.45;
 
-      drawField(oldX, centerY, unit, '#645b78', 1, 'META');
-      drawField(nextX, centerY, unit, '#aee5d4', openness, 'LOCAL ALTERNATIVE');
+      drawField(oldX, centerY, unit, '#645b78', 1, 'META', 'INSTAGRAM 25 · FACEBOOK 23');
+      drawField(nextX, centerY, unit, '#aee5d4', openness, 'LOCAL ALTERNATIVE', 'MASTODON 6 · BLUESKY 1');
 
       // Fade the current route out before switching, and while the hold opens the field.
       if (shownChannel !== selectedChannel && routeVisibility < 0.02) shownChannel = selectedChannel;
@@ -214,7 +218,7 @@ if (typeof p5 === 'function') {
       }
     };
 
-    function drawField(x, y, radius, color, visibility, label) {
+    function drawField(x, y, radius, color, visibility, label, platforms) {
       if (visibility < 0.02) return;
       const ink = p.color(color);
       p.noFill();
@@ -230,8 +234,12 @@ if (typeof p5 === 'function') {
       p.fill(ink);
       p.circle(x, y, 4);
       p.textAlign(p.CENTER, p.CENTER);
-      p.textSize(p.width < 540 ? 10 : 12);
-      p.text(label, x, p.height - 20);
+      const small = p.width < 540;
+      p.textSize(small ? 10 : 12);
+      p.text(label, x, p.height - (small ? 34 : 38));
+      // Responses that use each platform, out of 26.
+      p.textSize(small ? 9 : 11);
+      p.text(platforms, x, p.height - 18);
     }
 
     function drawRoute(originX, originY, channel, visibility) {
@@ -262,6 +270,10 @@ if (typeof p5 === 'function') {
       p.textSize(p.width < 540 ? 10 : 12);
       const labelY = above ? endY - 8 : endY + 8;
       p.text(`${channel.label.toUpperCase()} · ${channel.count} OF ${RESPONSES}`, 12, labelY);
+      if (channel.note) {
+        p.textSize(p.width < 540 ? 9 : 11);
+        p.text('INCL. ALL 10 “MAYBE” RESPONSES', 12, above ? labelY - 16 : labelY + 16);
+      }
     }
 
     function drawTether(originX, originY, x, y, visibility) {
