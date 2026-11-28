@@ -11,7 +11,7 @@ Bye Bye Meta is a LUCA Brussels Master's project about how Brussels cultural ins
 - Work in `~/Development/LUCA-dev/bye-bye-meta` on `main`. The sibling `bye-bye-meta-v020` is an older preview pinned to `v0.2.0`.
 - Run `node serve.js` from the project root and open [Leaving Together](http://localhost:8080/leaving-together.html). The root `index.html` is the original fictional-label prototype. `survey.html` is the aggregate audience-share experiment, and `leaving-meta.html` is the static chart.
 - The [public site](https://guevarajoge.github.io/LUCA-byebye_meta/) is hosted by GitHub Pages from `main` → `/docs`. Its homepage is `docs/index.html`. The local Leaving Together page and the public copy have separate HTML entry points and matching `leaving-together.js` and CSS files. When changing Leaving Together, keep both copies in sync and use relative URLs in `docs` so links work under the repository's Pages path.
-- The latest version is `v0.4.1`. Frozen copies of the visibly different versions live at `docs/v0.2.1/`, `v0.2.2/`, `v0.3.0/` and `v0.4.0/`, linked from a Versions line on the latest page. Each was extracted unchanged from its Git tag. The branch `backup/pre-version-renaming` preserves the old history locally.
+- The latest version is `v0.4.3`. Frozen copies of the replaced versions live at `docs/v0.2.1/`, `v0.2.2/` and `v0.3.0/`. Each has an archive banner linking back to the latest page, which lists them under Earlier versions. `docs/v0.4.0/` only forwards to the latest page until v0.5.0 replaces it. The routine is in CLAUDE.md. The branch `backup/pre-version-renaming` preserves the old history locally.
 
 ## What works today
 

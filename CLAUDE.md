@@ -14,7 +14,7 @@ At the start of a session, read [handover.md](handover.md) for where work left o
 
 - Run `node serve.js` and open http://localhost:8080/leaving-together.html.
 - GitHub Pages serves `main` → `/docs`. Leaving Together has a local copy and a `docs/` copy. Change both together and use relative URLs in `docs/`.
-- Every minor version with a visible change to the piece also gets a frozen online copy at `docs/vX.Y.0/`. After tagging, run `mkdir -p docs/vX.Y.0 && git archive vX.Y.0 docs | tar -x --strip-components=1 -C docs/vX.Y.0`, then add the link to the Versions line in both `docs/index.html` (relative) and `leaving-together.html` (full Pages URL). Also add the archive banner after `<body>` in the frozen `index.html` (copy it from an existing `docs/v*/index.html`, change the version number). Never edit a frozen copy beyond that banner.
+- Older versions stay online as frozen copies at `docs/vX.Y.0/`. The newest minor version has no frozen copy because the main page already shows it. When a new minor version with a visible change is released, freeze the one it replaces: run `git archive vX.Y.0 docs | tar -x --strip-components=1 -C docs/vX.Y.0` for the previous minor tag (replacing the forwarding `index.html` there), add the archive banner after `<body>` (copy it from an existing `docs/v*/index.html` and change the version number), and add the link to the Earlier versions line in both `docs/index.html` (relative) and `leaving-together.html` (full Pages URL). Then put a forwarding `index.html` at `docs/<new version>/` (copy the one from the current newest version). Never edit a frozen copy beyond that banner.
 - Use Git tags (`v0.1.0` onward) to find versions. Commit IDs in older PLAN.md entries predate a history rewrite.
 
 ## How we work
