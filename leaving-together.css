@@ -39,6 +39,9 @@ blockquote { margin: 0.45rem 0 0; font-size: clamp(1.1rem, 2vw, 1.25rem); line-h
 .open-source { margin-top: 0.75rem; max-width: 39rem; color: #8f8a94; font-size: 0.8125rem; }
 .open-source strong { color: #c9c3b7; font-weight: 700; }
 .open-source a { color: #c9c3b7; text-underline-offset: 0.25em; }
+.context { margin: 0 0 0.4rem; color: #8f8a94; font-family: "Space Grotesk", Arial, sans-serif; font-size: 0.8125rem; }
+.credits { margin-top: 0.75rem; max-width: 39rem; color: #8f8a94; font-size: 0.8125rem; }
+.credits strong { color: #c9c3b7; }
 .quote-position { margin-top: 0.55rem; color: #d0cad0; font-size: 0.875rem; font-variant-numeric: tabular-nums; }
 .quote-controls { display: flex; gap: 0.5rem; margin-top: 0.85rem; }
 

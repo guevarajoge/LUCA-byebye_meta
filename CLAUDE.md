@@ -23,8 +23,9 @@ At the start of a session, read [handover.md](handover.md) for where work left o
 - Do small, clear tasks directly. If a request is big or unclear, suggest running `/brief` first rather than guessing.
 - After a multi-step workflow or a tricky fix, offer to save it as a skill in `.claude/skills/`.
 - Suggest `/clear` when the user switches to an unrelated task. handover.md and PLAN.md carry the context forward.
-- Check each change in the browser: the counts, quote navigation, keyboard and pointer input, and a narrow viewport.
-- After verifying a change, add a dated entry to PLAN.md.
+- For small changes (text, styling, layout tweaks), edit and save without a browser check. When the user says "quick", make the edit and stop.
+- Run the full browser check (the `browser-check` skill: counts, quote navigation, keyboard and pointer input, a narrow viewport) once before committing, and after any change to data, interaction or the release routine.
+- Add one dated PLAN.md entry per release, covering its changes, not one per edit.
 - Keep PNGs, PDFs and other heavy files (images, video, audio, design files, archives) out of commits. `.gitignore` covers the common types. If the public site needs an asset, ask first.
 - Write commit subjects as `vX.Y.Z: <concrete change>`, for example `v0.3.0: Add navigation for 13 survey quotes`. Name what changed, not just "update" or "fixes". Add an annotated tag for the same version, with the subject text as its message. Bump the minor version for new features in the piece and the patch version for fixes, styling, tooling and docs.
 - Check `git status` first and keep any uncommitted work. Ask before committing, discarding, pushing or publishing.

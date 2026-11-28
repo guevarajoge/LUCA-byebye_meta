@@ -1,6 +1,6 @@
 ---
 name: browser-check
-description: Check Leaving Together in headless Chrome after a change, for both the local page and the docs/ copy under the Pages path, plus frozen versions and forwarders. Use before every release and after any change to the piece.
+description: Check Leaving Together in headless Chrome after a change, for both the local page and the docs/ copy under the Pages path, plus frozen versions and forwarders. Use once before committing a release, and after changes to data or interaction. Skip it for small text or styling edits.
 ---
 
 # Browser check

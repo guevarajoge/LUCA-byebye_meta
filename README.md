@@ -1,6 +1,6 @@
 # Bye Bye Meta: Leaving Together
 
-An interactive piece about what it would take for Brussels cultural institutions to leave Facebook and Instagram together. It was made as a LUCA School of Arts (Brussels) Master's project, using a survey of cultural workers.
+An interactive piece about what it would take for Brussels cultural institutions to leave Facebook and Instagram together. It was made by Datalicious, a sub-group of the MIND Master class at LUCA School of Arts, Brussels, for Studio Practice #3 (2026), using a survey of cultural workers.
 
 **See it online:** <https://guevarajoge.github.io/LUCA-byebye_meta/>
 
@@ -70,6 +70,10 @@ In `leaving-together.html` and `docs/index.html`:
 - **Show only counts.** Don't show anything that links one person's answers to each other unless the respondents agreed to it.
 - **Quote only with permission.** Use only answers whose authors allowed quoting. Replace names of people, institutions and places with brackets, for example `[an institution]`.
 - **Respect what people agreed to.** If your survey asked whether answers could be used in totals, count only the answers that said yes.
+
+## Credits
+
+Made by Datalicious: Keesha Agyei, Louka Van Der Taelen, Widad Anncoud, Aaliyah Nyanguile, Prassan Nopane and Jorge Guevara Larrotta.
 
 ## Built with
 
