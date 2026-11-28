@@ -54,6 +54,40 @@ for (const group of groups) {
   legend.append(item);
 }
 
+// Aggregate counts from the 26 submissions. Respondents could choose several
+// channels, so the counts overlap. They are not linked to individual marks.
+const RESPONSES = 26;
+const channels = [
+  { label: 'Newsletters', count: 23, end: [0, 0.13] },
+  { label: 'Cultural listings', count: 22, end: [0, 0.44] },
+  { label: 'Print', count: 20, end: [0, 0.76] }
+];
+const channelButtons = document.querySelector('#channel-buttons');
+const channelStatus = document.querySelector('#channel-status');
+const channelHint = `Select one to see how many of the ${RESPONSES} responses use it. Respondents could choose more than one.`;
+let selectedChannel = null;
+
+function selectChannel(channel) {
+  selectedChannel = selectedChannel === channel ? null : channel;
+  for (const button of channelButtons.children) {
+    button.setAttribute('aria-pressed', button.dataset.label === selectedChannel?.label);
+  }
+  channelStatus.textContent = selectedChannel
+    ? `${selectedChannel.label}: ${selectedChannel.count} of ${RESPONSES} responses already use this channel.`
+    : channelHint;
+}
+
+for (const channel of channels) {
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.dataset.label = channel.label;
+  button.setAttribute('aria-pressed', 'false');
+  button.textContent = `${channel.label} · ${channel.count}`;
+  button.addEventListener('click', () => selectChannel(channel));
+  channelButtons.append(button);
+}
+channelStatus.textContent = channelHint;
+
 let pointer = null;
 let keyboard = false;
 let toggled = false;
@@ -114,6 +148,8 @@ if (typeof p5 === 'function') {
     const marks = [];
     let openness = 0;
     let clock = 0;
+    let shownChannel = null;
+    let routeVisibility = 0;
 
     p.setup = () => {
       p.createCanvas(field.clientWidth, field.clientHeight).parent(field);
@@ -155,6 +191,13 @@ if (typeof p5 === 'function') {
       drawField(oldX, centerY, unit, '#645b78', 1, 'META');
       drawField(nextX, centerY, unit, '#aee5d4', openness, 'LOCAL ALTERNATIVE');
 
+      // Fade the current route out before switching, and while the hold opens the field.
+      if (shownChannel !== selectedChannel && routeVisibility < 0.02) shownChannel = selectedChannel;
+      const routeTarget = shownChannel && shownChannel === selectedChannel ? 1 - openness : 0;
+      routeVisibility = reducedMotion.matches ? routeTarget : p.lerp(routeVisibility, routeTarget, 1 - Math.exp(-6 * dt));
+      if (reducedMotion.matches) shownChannel = selectedChannel;
+      if (shownChannel) drawRoute(oldX, centerY, shownChannel, routeVisibility);
+
       for (const mark of marks) {
         const { group } = mark;
         const initialAngle = mark.initialAngle + 0.07 * clock;
@@ -189,6 +232,36 @@ if (typeof p5 === 'function') {
       p.textAlign(p.CENTER, p.CENTER);
       p.textSize(p.width < 540 ? 10 : 12);
       p.text(label, x, p.height - 20);
+    }
+
+    function drawRoute(originX, originY, channel, visibility) {
+      if (visibility < 0.02) return;
+      const endX = channel.end[0] * p.width;
+      const endY = channel.end[1] * p.height;
+      const bendX = (originX + endX) / 2;
+      const point = (t, a, b, c, d) => {
+        const u = 1 - t;
+        return u * u * u * a + 3 * u * u * t * b + 3 * u * t * t * c + t * t * t * d;
+      };
+      // The line grows outward from the field as it appears.
+      const steps = 48;
+      p.noFill();
+      p.stroke(243, 237, 223, 150 * visibility);
+      p.strokeWeight(1 + 5 * channel.count / RESPONSES);
+      p.beginShape();
+      for (let step = 0; step <= steps; step++) {
+        const t = visibility * step / steps;
+        p.vertex(point(t, originX, bendX, bendX, endX), point(t, originY, originY, endY, endY));
+      }
+      p.endShape();
+      p.noStroke();
+      p.fill(243, 237, 223, 255 * visibility);
+      // Put the label on the side of the line facing away from the field, so the curve never crosses it.
+      const above = endY <= originY;
+      p.textAlign(p.LEFT, above ? p.BOTTOM : p.TOP);
+      p.textSize(p.width < 540 ? 10 : 12);
+      const labelY = above ? endY - 8 : endY + 8;
+      p.text(`${channel.label.toUpperCase()} · ${channel.count} OF ${RESPONSES}`, 12, labelY);
     }
 
     function drawTether(originX, originY, x, y, visibility) {

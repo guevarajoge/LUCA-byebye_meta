@@ -21,7 +21,7 @@ Each completed hold advances one quote, which stays visible on release. Previous
 
 ## Where to pick up
 
-The next proposed experiment is to show the channels respondents already use before the viewer makes space elsewhere. Try three selectable routes in the existing p5.js scene using aggregate counts from the 26 submissions: newsletters (23), cultural listings (22), and print (20). Respondents could select multiple channels. Keep these aggregates separate from individual marks, and check whether revealing the routes makes the hold gesture easier to interpret before expanding the scene. The finding that all ten conditional respondents reported using newsletters is a candidate for discussion before public use.
+Channel routes are in place locally and in `docs/` (pending commit as `v0.4.0`). Three buttons below the canvas show newsletters (23), cultural listings (22), and print (20) of 26 responses as one labeled line at a time, leaving the Meta field. Respondents could select multiple channels. The routes stay aggregate and separate from the individual marks. Next, review with viewers whether revealing the routes makes the hold gesture easier to interpret before expanding the scene. The finding that all ten conditional respondents reported using newsletters remains private and a candidate for discussion before public use.
 
 ## Working agreements
 
